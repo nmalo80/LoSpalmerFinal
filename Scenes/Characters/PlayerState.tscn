@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Characters/PlayerState.gd" type="Script" id=1]
+
+[node name="PlayerState" type="Node" groups=["player_state"]]
+script = ExtResource( 1 )

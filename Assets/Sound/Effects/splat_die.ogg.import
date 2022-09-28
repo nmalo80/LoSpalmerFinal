@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/splat_die.ogg-75f0619825677f64b855b6814cde07f6.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/splat_die.ogg"
+dest_files=[ "res://.import/splat_die.ogg-75f0619825677f64b855b6814cde07f6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,676 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://Assets/Levels/bricks/bricks.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Levels/backgrounds/rock_2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/GUI/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Levels/TestLevel_2.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/NPCs/GiantCrab.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Levels/HazardTilemaps.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Levels/LevelSoundEffects.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Levels/TestLevel_6.tres" type="TileSet" id=8]
+[ext_resource path="res://Scenes/Levels/Tiles.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Collectibles/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Collectibles/WaterMelon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Obstacles/TheVoid.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Sound/Tracks/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/Levels/BreakingMossy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Levels/backgrounds/bg.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Levels/LavaAnimation2.tres" type="Texture" id=16]
+[ext_resource path="res://Assets/Levels/backgrounds/rock_1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Levels/backgrounds/rock_4.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Levels/SpikesMap.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Characters/LoSpalmer.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Levels/backgrounds/myst.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Levels/backgrounds/rock_3.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Levels/BaseLevel.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Levels/DisappearingGrassTiles2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Levels/Level_0_5_CustomScript.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/NPCs/GiantCrabCheckpoint.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Obstacles/RoundSaw.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Tools/DashPowerUp.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Levels/LavaMap.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Tools/FinishLine.tscn" type="PackedScene" id=30]
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 128, 128, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 128, 0, 128 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "bricks.jpg 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 384, 640 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 219, Vector2( 0, 3 ), 504, Vector2( 0, 4 ), 63, Vector2( 1, 0 ), 511, Vector2( 1, 1 ), 438, Vector2( 1, 2 ), 219, Vector2( 1, 3 ), 504, Vector2( 1, 4 ), 63, Vector2( 2, 0 ), 511, Vector2( 2, 1 ), 438, Vector2( 2, 2 ), 219, Vector2( 2, 3 ), 504, Vector2( 2, 4 ), 63 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 128, 128 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [ Vector3( 0, 0, 2 ), Vector3( 0, 1, 2 ), Vector3( 0, 2, 2 ), Vector3( 0, 3, 2 ), Vector3( 0, 4, 2 ) ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 11 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+points = PoolVector2Array( 0, 32, 64, 32, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "LavaAnimation2.tres 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 192, 192 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 260, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 320, Vector2( 1, 1 ), 325, Vector2( 1, 2 ), 5, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 65, Vector2( 2, 2 ), 1 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 64, 64 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 29 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="AudioStreamSample" id=28]
+format = 1
+stereo = true
+
+[node name="Level_0_5" groups=["level"] instance=ExtResource( 23 )]
+position = Vector2( -1, 0 )
+level_number = 5
+
+[node name="LevelCustomScript" type="Node" parent="." index="0" groups=["level"]]
+script = ExtResource( 25 )
+
+[node name="Decoration" type="Node2D" parent="." index="1"]
+z_index = -10
+
+[node name="CheckPoints" type="Node2D" parent="." index="2"]
+
+[node name="GiantCrabCheckpoint1" parent="CheckPoints" index="0" instance=ExtResource( 26 )]
+position = Vector2( 3626, 1668 )
+new_speed = 350.0
+
+[node name="GiantCrabCheckpoint2" parent="CheckPoints" index="1" instance=ExtResource( 26 )]
+position = Vector2( 7534, 1694 )
+new_speed = 450.0
+
+[node name="GiantCrabCheckpoint3" parent="CheckPoints" index="2" instance=ExtResource( 26 )]
+position = Vector2( 29477, 1678 )
+new_speed = 0.0
+destroy = true
+
+[node name="GameCamera" parent="." index="3"]
+zoom = Vector2( 2, 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="GameCamera" index="0"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer_1" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="0"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.01, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_1" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_1" index="0"]
+modulate = Color( 0.054902, 0.0509804, 0.0509804, 0.894118 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 15 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="ParallaxLayer_2" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="1"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.02, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_2" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_2" index="0"]
+modulate = Color( 0.054902, 0.0509804, 0.0509804, 0.894118 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 17 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="ParallaxLayer_3" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="2"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.04, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_3" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_3" index="0"]
+modulate = Color( 0.054902, 0.0509804, 0.0509804, 0.894118 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 2 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="ParallaxLayer_4" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="3"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.04, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_4" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_4" index="0"]
+modulate = Color( 0.054902, 0.0509804, 0.0509804, 0.894118 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 22 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="ParallaxLayer_5" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="4"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.08, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_5" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_5" index="0"]
+modulate = Color( 0.054902, 0.0509804, 0.0509804, 0.894118 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 18 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="ParallaxLayer_6" type="ParallaxLayer" parent="GameCamera/ParallaxBackground" index="5"]
+position = Vector2( 0, -4 )
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 2304, 1296 )
+
+[node name="Sprite_6" type="Sprite" parent="GameCamera/ParallaxBackground/ParallaxLayer_6" index="0"]
+modulate = Color( 1, 1, 1, 0.509804 )
+position = Vector2( 0, -647 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 21 )
+centered = false
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="Tiles" type="Node2D" parent="." index="4" groups=["tiles"]]
+script = ExtResource( 9 )
+particle_emission_scene = ExtResource( 14 )
+
+[node name="GrassTileMapModified" type="TileMap" parent="Tiles" index="0"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 128, 128 )
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+collision_layer = 68
+collision_mask = 9
+format = 1
+tile_data = PoolIntArray( 65710, 0, 0, 65711, 0, 2, 65718, 0, 0, 65719, 0, 2, 131102, 0, 262148, 131103, 0, 196609, 131104, 0, 196609, 131105, 0, 196609, 131106, 0, 196609, 131107, 0, 196609, 131108, 0, 196609, 131109, 0, 262150, 131130, 0, 262148, 131131, 0, 196609, 131132, 0, 196609, 131133, 0, 196609, 131134, 0, 196609, 131135, 0, 196609, 131136, 0, 196609, 131137, 0, 262150, 131246, 0, 131072, 131247, 0, 131074, 131254, 0, 65536, 131255, 0, 65538, 196638, 0, 65539, 196645, 0, 65539, 196666, 0, 65539, 196673, 0, 65539, 196700, 0, 0, 196701, 0, 2, 196790, 0, 65536, 196791, 0, 65538, 262174, 0, 65539, 262181, 0, 65539, 262201, 0, 196608, 262202, 0, 327686, 262209, 0, 65539, 262236, 0, 65536, 262237, 0, 65538, 262318, 0, 0, 262319, 0, 2, 262326, 0, 65536, 262327, 0, 65538, 327710, 0, 65539, 327717, 0, 65539, 327738, 0, 65539, 327745, 0, 65539, 327772, 0, 65536, 327773, 0, 65538, 327854, 0, 65536, 327855, 0, 65538, 327862, 0, 65536, 327863, 0, 65538, 393246, 0, 65539, 393253, 0, 65539, 393274, 0, 65539, 393281, 0, 65539, 393308, 0, 65536, 393309, 0, 65538, 393390, 0, 65536, 393391, 0, 65538, 393398, 0, 65536, 393399, 0, 65538, 458782, 0, 65539, 458789, 0, 65539, 458807, 0, 196608, 458808, 0, 196609, 458809, 0, 196609, 458810, 0, 327686, 458817, 0, 65539, 458844, 0, 65536, 458845, 0, 65538, 458926, 0, 65536, 458927, 0, 65538, 458934, 0, 65536, 458935, 0, 65538, 524318, 0, 65539, 524325, 0, 65539, 524346, 0, 65539, 524353, 0, 65539, 524380, 0, 131072, 524381, 0, 131074, 524462, 0, 65536, 524463, 0, 65538, 524470, 0, 65536, 524471, 0, 65538, 589854, 0, 65539, 589861, 0, 65539, 589882, 0, 65539, 589889, 0, 65539, 589990, 0, 196608, 589991, 0, 196609, 589992, 0, 196609, 589993, 0, 196609, 589994, 0, 196610, 589998, 0, 65536, 589999, 0, 65538, 590006, 0, 65536, 590007, 0, 65538, 655390, 0, 65539, 655397, 0, 65539, 655410, 0, 196608, 655411, 0, 196609, 655412, 0, 196609, 655413, 0, 196610, 655418, 0, 65539, 655425, 0, 65539, 655452, 0, 0, 655453, 0, 2, 655534, 0, 262144, 655535, 0, 131074, 655542, 0, 65536, 655543, 0, 65538, 655575, 0, 196611, 655583, 0, 196611, 720926, 0, 65539, 720933, 0, 65539, 720954, 0, 65539, 720961, 0, 65539, 720981, 0, 196608, 720982, 0, 196609, 720983, 0, 196609, 720984, 0, 196610, 720988, 0, 65536, 720989, 0, 65538, 721035, 0, 262148, 721036, 0, 196609, 721037, 0, 196609, 721038, 0, 196609, 721039, 0, 262150, 721045, 0, 262148, 721046, 0, 196609, 721047, 0, 196609, 721048, 0, 262150, 721055, 0, 262148, 721056, 0, 196609, 721057, 0, 196609, 721058, 0, 196609, 721059, 0, 262150, 721070, 0, 65539, 721078, 0, 65536, 721079, 0, 65538, 721108, 0, 196611, 786462, 0, 65539, 786469, 0, 65539, 786476, 0, 196608, 786477, 0, 196609, 786478, 0, 196609, 786479, 0, 196610, 786490, 0, 65539, 786497, 0, 65539, 786511, 0, 196608, 786512, 0, 196609, 786513, 0, 196609, 786514, 0, 196610, 786524, 0, 65536, 786525, 0, 65538, 786571, 0, 65539, 786575, 0, 65539, 786581, 0, 65539, 786584, 0, 65539, 786591, 0, 65539, 786595, 0, 65539, 786606, 0, 65539, 786614, 0, 65536, 786615, 0, 65538, 786641, 0, 196611, 786659, 0, 196611, 851998, 0, 65539, 852005, 0, 65539, 852026, 0, 65539, 852033, 0, 65539, 852041, 0, 196608, 852042, 0, 196609, 852043, 0, 196609, 852044, 0, 196610, 852060, 0, 65536, 852061, 0, 65538, 852107, 0, 65539, 852111, 0, 65539, 852117, 0, 65539, 852120, 0, 65539, 852127, 0, 65539, 852131, 0, 65539, 852142, 0, 327680, 852143, 0, 2, 852150, 0, 131072, 852151, 0, 131074, 917534, 0, 65539, 917541, 0, 65539, 917562, 0, 65539, 917569, 0, 65539, 917596, 0, 65536, 917597, 0, 65538, 917643, 0, 65539, 917647, 0, 65539, 917653, 0, 65539, 917656, 0, 65539, 917663, 0, 65539, 917667, 0, 65539, 917678, 0, 65536, 917679, 0, 65538, 1048561, 0, 196608, 1048562, 0, 262147, 1048563, 0, 1, 1048564, 0, 1, 1048565, 0, 1, 1048566, 0, 1, 1048567, 0, 1, 1048568, 0, 1, 1048569, 0, 1, 1048570, 0, 1, 1048571, 0, 1, 1048572, 0, 1, 1048573, 0, 1, 1048574, 0, 1, 1048575, 0, 1, 983040, 0, 1, 983041, 0, 1, 983042, 0, 1, 983043, 0, 1, 983044, 0, 1, 983045, 0, 1, 983046, 0, 1, 983047, 0, 1, 983048, 0, 1, 983049, 0, 1, 983050, 0, 1, 983051, 0, 1, 983052, 0, 1, 983053, 0, 1, 983054, 0, 1, 983055, 0, 1, 983056, 0, 1, 983057, 0, 1, 983058, 0, 1, 983059, 0, 1, 983060, 0, 1, 983061, 0, 1, 983062, 0, 1, 983063, 0, 1, 983064, 0, 1, 983065, 0, 1, 983066, 0, 1, 983067, 0, 1, 983068, 0, 1, 983069, 0, 1, 983070, 0, 6, 983071, 0, 1, 983072, 0, 1, 983073, 0, 1, 983074, 0, 1, 983075, 0, 1, 983076, 0, 1, 983077, 0, 6, 983078, 0, 1, 983079, 0, 1, 983080, 0, 1, 983081, 0, 1, 983082, 0, 1, 983083, 0, 1, 983084, 0, 1, 983085, 0, 1, 983086, 0, 1, 983087, 0, 1, 983088, 0, 1, 983089, 0, 1, 983090, 0, 1, 983091, 0, 1, 983092, 0, 1, 983093, 0, 1, 983094, 0, 1, 983095, 0, 1, 983096, 0, 1, 983097, 0, 1, 983098, 0, 6, 983099, 0, 1, 983100, 0, 1, 983101, 0, 1, 983102, 0, 1, 983103, 0, 1, 983104, 0, 1, 983105, 0, 6, 983106, 0, 1, 983107, 0, 1, 983108, 0, 1, 983109, 0, 1, 983110, 0, 1, 983111, 0, 1, 983112, 0, 1, 983113, 0, 1, 983114, 0, 1, 983115, 0, 1, 983116, 0, 1, 983117, 0, 1, 983118, 0, 1, 983119, 0, 1, 983120, 0, 1, 983121, 0, 1, 983122, 0, 1, 983123, 0, 1, 983124, 0, 1, 983125, 0, 1, 983126, 0, 1, 983127, 0, 1, 983128, 0, 1, 983129, 0, 1, 983130, 0, 1, 983131, 0, 1, 983132, 0, 65541, 983133, 0, 65540, 983134, 0, 1, 983135, 0, 1, 983136, 0, 1, 983137, 0, 1, 983138, 0, 1, 983139, 0, 1, 983140, 0, 1, 983141, 0, 1, 983142, 0, 1, 983143, 0, 1, 983144, 0, 1, 983145, 0, 1, 983146, 0, 1, 983147, 0, 1, 983148, 0, 1, 983149, 0, 1, 983150, 0, 1, 983151, 0, 1, 983152, 0, 1, 983153, 0, 1, 983154, 0, 1, 983155, 0, 1, 983156, 0, 1, 983157, 0, 1, 983158, 0, 1, 983159, 0, 1, 983160, 0, 1, 983161, 0, 1, 983162, 0, 1, 983163, 0, 1, 983164, 0, 1, 983165, 0, 1, 983166, 0, 1, 983167, 0, 1, 983168, 0, 1, 983169, 0, 1, 983170, 0, 1, 983171, 0, 1, 983172, 0, 1, 983173, 0, 1, 983174, 0, 1, 983175, 0, 1, 983176, 0, 1, 983177, 0, 1, 983178, 0, 1, 983179, 0, 6, 983180, 0, 1, 983181, 0, 1, 983182, 0, 1, 983183, 0, 6, 983184, 0, 1, 983185, 0, 1, 983186, 0, 1, 983187, 0, 1, 983188, 0, 1, 983189, 0, 6, 983190, 0, 1, 983191, 0, 1, 983192, 0, 6, 983193, 0, 1, 983194, 0, 1, 983195, 0, 1, 983196, 0, 1, 983197, 0, 1, 983198, 0, 1, 983199, 0, 6, 983200, 0, 1, 983201, 0, 1, 983202, 0, 1, 983203, 0, 6, 983204, 0, 1, 983205, 0, 1, 983206, 0, 1, 983207, 0, 1, 983208, 0, 1, 983209, 0, 1, 983210, 0, 1, 983211, 0, 1, 983212, 0, 1, 983213, 0, 1, 983214, 0, 65541, 983215, 0, 65540, 983216, 0, 1, 983217, 0, 1, 983218, 0, 1, 983219, 0, 1, 983220, 0, 1, 983221, 0, 1, 983222, 0, 1, 983223, 0, 1, 983224, 0, 1, 983225, 0, 1, 983226, 0, 1, 983227, 0, 1, 983228, 0, 1, 983229, 0, 1, 983230, 0, 1, 983231, 0, 1, 983232, 0, 1, 983233, 0, 1, 983234, 0, 1, 983235, 0, 1, 983236, 0, 1, 983237, 0, 1, 983238, 0, 1, 983239, 0, 1, 983240, 0, 1, 983241, 0, 1, 983242, 0, 1, 983243, 0, 1, 983244, 0, 1, 983245, 0, 1, 983246, 0, 1, 983247, 0, 2, 983269, 0, 0, 983270, 0, 1, 983271, 0, 1, 983272, 0, 1, 983273, 0, 1, 983274, 0, 1, 983275, 0, 1, 983276, 0, 1, 983277, 0, 1, 983278, 0, 1, 983279, 0, 1, 983280, 0, 1, 983281, 0, 1, 983282, 0, 1, 983283, 0, 1, 983284, 0, 1, 983285, 0, 1, 983286, 0, 1, 983287, 0, 1, 983288, 0, 1, 983289, 0, 1, 983290, 0, 1, 983291, 0, 1, 983292, 0, 1, 983293, 0, 1, 983294, 0, 2, 1114098, 0, 131072, 1114099, 0, 5, 1114100, 0, 65537, 1114101, 0, 65537, 1114102, 0, 65537, 1114103, 0, 65537, 1114104, 0, 65537, 1114105, 0, 65537, 1114106, 0, 65537, 1114107, 0, 65537, 1114108, 0, 65537, 1114109, 0, 65537, 1114110, 0, 65537, 1114111, 0, 65537, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 65537, 1048585, 0, 65537, 1048586, 0, 65537, 1048587, 0, 65537, 1048588, 0, 65537, 1048589, 0, 65537, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 65537, 1048594, 0, 65537, 1048595, 0, 65537, 1048596, 0, 65537, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 65537, 1048600, 0, 65537, 1048601, 0, 65537, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65537, 1048607, 0, 65537, 1048608, 0, 65537, 1048609, 0, 65537, 1048610, 0, 65537, 1048611, 0, 65537, 1048612, 0, 65537, 1048613, 0, 65537, 1048614, 0, 65537, 1048615, 0, 65537, 1048616, 0, 65537, 1048617, 0, 65537, 1048618, 0, 65537, 1048619, 0, 65537, 1048620, 0, 65537, 1048621, 0, 65537, 1048622, 0, 65537, 1048623, 0, 65537, 1048624, 0, 65537, 1048625, 0, 65537, 1048626, 0, 65537, 1048627, 0, 65537, 1048628, 0, 65537, 1048629, 0, 65537, 1048630, 0, 65537, 1048631, 0, 65537, 1048632, 0, 65537, 1048633, 0, 65537, 1048634, 0, 65537, 1048635, 0, 65537, 1048636, 0, 65537, 1048637, 0, 65537, 1048638, 0, 65537, 1048639, 0, 65537, 1048640, 0, 65537, 1048641, 0, 65537, 1048642, 0, 65537, 1048643, 0, 65537, 1048644, 0, 65537, 1048645, 0, 65537, 1048646, 0, 65537, 1048647, 0, 65537, 1048648, 0, 65537, 1048649, 0, 65537, 1048650, 0, 65537, 1048651, 0, 65537, 1048652, 0, 65537, 1048653, 0, 65537, 1048654, 0, 65537, 1048655, 0, 65537, 1048656, 0, 65537, 1048657, 0, 65537, 1048658, 0, 65537, 1048659, 0, 65537, 1048660, 0, 65537, 1048661, 0, 65537, 1048662, 0, 65537, 1048663, 0, 65537, 1048664, 0, 65537, 1048665, 0, 65537, 1048666, 0, 65537, 1048667, 0, 65537, 1048668, 0, 65537, 1048669, 0, 65537, 1048670, 0, 65537, 1048671, 0, 65537, 1048672, 0, 65537, 1048673, 0, 65537, 1048674, 0, 65537, 1048675, 0, 65537, 1048676, 0, 65537, 1048677, 0, 65537, 1048678, 0, 65537, 1048679, 0, 65537, 1048680, 0, 65537, 1048681, 0, 65537, 1048682, 0, 65537, 1048683, 0, 65537, 1048684, 0, 65537, 1048685, 0, 65537, 1048686, 0, 65537, 1048687, 0, 65537, 1048688, 0, 65537, 1048689, 0, 65537, 1048690, 0, 65537, 1048691, 0, 65537, 1048692, 0, 65537, 1048693, 0, 65537, 1048694, 0, 65537, 1048695, 0, 65537, 1048696, 0, 65537, 1048697, 0, 65537, 1048698, 0, 65537, 1048699, 0, 65537, 1048700, 0, 65537, 1048701, 0, 65537, 1048702, 0, 65537, 1048703, 0, 65537, 1048704, 0, 65537, 1048705, 0, 65537, 1048706, 0, 65537, 1048707, 0, 65537, 1048708, 0, 65537, 1048709, 0, 65537, 1048710, 0, 65537, 1048711, 0, 65537, 1048712, 0, 65537, 1048713, 0, 65537, 1048714, 0, 65537, 1048715, 0, 65537, 1048716, 0, 65537, 1048717, 0, 65537, 1048718, 0, 65537, 1048719, 0, 65537, 1048720, 0, 65537, 1048721, 0, 65537, 1048722, 0, 65537, 1048723, 0, 65537, 1048724, 0, 65537, 1048725, 0, 65537, 1048726, 0, 65537, 1048727, 0, 65537, 1048728, 0, 65537, 1048729, 0, 65537, 1048730, 0, 65537, 1048731, 0, 65537, 1048732, 0, 65537, 1048733, 0, 65537, 1048734, 0, 65537, 1048735, 0, 65537, 1048736, 0, 65537, 1048737, 0, 65537, 1048738, 0, 65537, 1048739, 0, 65537, 1048740, 0, 65537, 1048741, 0, 65537, 1048742, 0, 65537, 1048743, 0, 65537, 1048744, 0, 65537, 1048745, 0, 65537, 1048746, 0, 65537, 1048747, 0, 65537, 1048748, 0, 65537, 1048749, 0, 65537, 1048750, 0, 65537, 1048751, 0, 65537, 1048752, 0, 65537, 1048753, 0, 65537, 1048754, 0, 65537, 1048755, 0, 65537, 1048756, 0, 65537, 1048757, 0, 65537, 1048758, 0, 65537, 1048759, 0, 65537, 1048760, 0, 65537, 1048761, 0, 65537, 1048762, 0, 65537, 1048763, 0, 65537, 1048764, 0, 65537, 1048765, 0, 65537, 1048766, 0, 65537, 1048767, 0, 65537, 1048768, 0, 65537, 1048769, 0, 65537, 1048770, 0, 65537, 1048771, 0, 65537, 1048772, 0, 65537, 1048773, 0, 65537, 1048774, 0, 65537, 1048775, 0, 65537, 1048776, 0, 65537, 1048777, 0, 65537, 1048778, 0, 65537, 1048779, 0, 65537, 1048780, 0, 65537, 1048781, 0, 65537, 1048782, 0, 65537, 1048783, 0, 65538, 1048805, 0, 65536, 1048806, 0, 65537, 1048807, 0, 65537, 1048808, 0, 65537, 1048809, 0, 65537, 1048810, 0, 65537, 1048811, 0, 65537, 1048812, 0, 65537, 1048813, 0, 65537, 1048814, 0, 65537, 1048815, 0, 65537, 1048816, 0, 65537, 1048817, 0, 65537, 1048818, 0, 65537, 1048819, 0, 65537, 1048820, 0, 65537, 1048821, 0, 65537, 1048822, 0, 65537, 1048823, 0, 65537, 1048824, 0, 65537, 1048825, 0, 65537, 1048826, 0, 65537, 1048827, 0, 65537, 1048828, 0, 65537, 1048829, 0, 65537, 1048830, 0, 65538, 1179635, 0, 131072, 1179636, 0, 131073, 1179637, 0, 131073, 1179638, 0, 131073, 1179639, 0, 131073, 1179640, 0, 131073, 1179641, 0, 131073, 1179642, 0, 131073, 1179643, 0, 131073, 1179644, 0, 131073, 1179645, 0, 131073, 1179646, 0, 131073, 1179647, 0, 131073, 1114112, 0, 131073, 1114113, 0, 131073, 1114114, 0, 131073, 1114115, 0, 131073, 1114116, 0, 131073, 1114117, 0, 131073, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 0, 131073, 1114132, 0, 131073, 1114133, 0, 131073, 1114134, 0, 131073, 1114135, 0, 131073, 1114136, 0, 131073, 1114137, 0, 131073, 1114138, 0, 131073, 1114139, 0, 131073, 1114140, 0, 131073, 1114141, 0, 131073, 1114142, 0, 131073, 1114143, 0, 131073, 1114144, 0, 131073, 1114145, 0, 131073, 1114146, 0, 131073, 1114147, 0, 131073, 1114148, 0, 131073, 1114149, 0, 131073, 1114150, 0, 131073, 1114151, 0, 131073, 1114152, 0, 131073, 1114153, 0, 131073, 1114154, 0, 131073, 1114155, 0, 131073, 1114156, 0, 131073, 1114157, 0, 131073, 1114158, 0, 131073, 1114159, 0, 131073, 1114160, 0, 131073, 1114161, 0, 131073, 1114162, 0, 131073, 1114163, 0, 131073, 1114164, 0, 131073, 1114165, 0, 131073, 1114166, 0, 131073, 1114167, 0, 131073, 1114168, 0, 131073, 1114169, 0, 131073, 1114170, 0, 131073, 1114171, 0, 131073, 1114172, 0, 131073, 1114173, 0, 131073, 1114174, 0, 131073, 1114175, 0, 131073, 1114176, 0, 131073, 1114177, 0, 131073, 1114178, 0, 131073, 1114179, 0, 131073, 1114180, 0, 131073, 1114181, 0, 131073, 1114182, 0, 131073, 1114183, 0, 131073, 1114184, 0, 131073, 1114185, 0, 131073, 1114186, 0, 131073, 1114187, 0, 131073, 1114188, 0, 131073, 1114189, 0, 131073, 1114190, 0, 131073, 1114191, 0, 131073, 1114192, 0, 131073, 1114193, 0, 131073, 1114194, 0, 131073, 1114195, 0, 131073, 1114196, 0, 131073, 1114197, 0, 131073, 1114198, 0, 131073, 1114199, 0, 131073, 1114200, 0, 131073, 1114201, 0, 131073, 1114202, 0, 131073, 1114203, 0, 131073, 1114204, 0, 131073, 1114205, 0, 131073, 1114206, 0, 131073, 1114207, 0, 131073, 1114208, 0, 131073, 1114209, 0, 131073, 1114210, 0, 131073, 1114211, 0, 131073, 1114212, 0, 131073, 1114213, 0, 131073, 1114214, 0, 131073, 1114215, 0, 131073, 1114216, 0, 131073, 1114217, 0, 131073, 1114218, 0, 131073, 1114219, 0, 131073, 1114220, 0, 131073, 1114221, 0, 131073, 1114222, 0, 131073, 1114223, 0, 131073, 1114224, 0, 131073, 1114225, 0, 131073, 1114226, 0, 131073, 1114227, 0, 131073, 1114228, 0, 131073, 1114229, 0, 131073, 1114230, 0, 131073, 1114231, 0, 131073, 1114232, 0, 131073, 1114233, 0, 131073, 1114234, 0, 131073, 1114235, 0, 131073, 1114236, 0, 131073, 1114237, 0, 131073, 1114238, 0, 131073, 1114239, 0, 131073, 1114240, 0, 131073, 1114241, 0, 131073, 1114242, 0, 131073, 1114243, 0, 131073, 1114244, 0, 131073, 1114245, 0, 131073, 1114246, 0, 131073, 1114247, 0, 131073, 1114248, 0, 131073, 1114249, 0, 131073, 1114250, 0, 131073, 1114251, 0, 131073, 1114252, 0, 131073, 1114253, 0, 131073, 1114254, 0, 131073, 1114255, 0, 131073, 1114256, 0, 131073, 1114257, 0, 131073, 1114258, 0, 131073, 1114259, 0, 131073, 1114260, 0, 131073, 1114261, 0, 131073, 1114262, 0, 131073, 1114263, 0, 131073, 1114264, 0, 131073, 1114265, 0, 131073, 1114266, 0, 131073, 1114267, 0, 131073, 1114268, 0, 131073, 1114269, 0, 131073, 1114270, 0, 131073, 1114271, 0, 131073, 1114272, 0, 131073, 1114273, 0, 131073, 1114274, 0, 131073, 1114275, 0, 131073, 1114276, 0, 131073, 1114277, 0, 131073, 1114278, 0, 131073, 1114279, 0, 131073, 1114280, 0, 131073, 1114281, 0, 131073, 1114282, 0, 131073, 1114283, 0, 131073, 1114284, 0, 131073, 1114285, 0, 131073, 1114286, 0, 131073, 1114287, 0, 131073, 1114288, 0, 131073, 1114289, 0, 131073, 1114290, 0, 131073, 1114291, 0, 131073, 1114292, 0, 131073, 1114293, 0, 131073, 1114294, 0, 131073, 1114295, 0, 131073, 1114296, 0, 131073, 1114297, 0, 131073, 1114298, 0, 131073, 1114299, 0, 131073, 1114300, 0, 131073, 1114301, 0, 131073, 1114302, 0, 131073, 1114303, 0, 131073, 1114304, 0, 131073, 1114305, 0, 131073, 1114306, 0, 131073, 1114307, 0, 131073, 1114308, 0, 131073, 1114309, 0, 131073, 1114310, 0, 131073, 1114311, 0, 131073, 1114312, 0, 131073, 1114313, 0, 131073, 1114314, 0, 131073, 1114315, 0, 131073, 1114316, 0, 131073, 1114317, 0, 131073, 1114318, 0, 131073, 1114319, 0, 131074, 1114341, 0, 131072, 1114342, 0, 131073, 1114343, 0, 131073, 1114344, 0, 131073, 1114345, 0, 131073, 1114346, 0, 131073, 1114347, 0, 131073, 1114348, 0, 131073, 1114349, 0, 131073, 1114350, 0, 131073, 1114351, 0, 131073, 1114352, 0, 131073, 1114353, 0, 131073, 1114354, 0, 131073, 1114355, 0, 131073, 1114356, 0, 131073, 1114357, 0, 131073, 1114358, 0, 131073, 1114359, 0, 131073, 1114360, 0, 131073, 1114361, 0, 131073, 1114362, 0, 131073, 1114363, 0, 131073, 1114364, 0, 131073, 1114365, 0, 131073, 1114366, 0, 131074 )
+
+[node name="GrassTileMapRightSlope" type="TileMap" parent="Tiles" index="1"]
+position = Vector2( -47.7, -2.78 )
+rotation = -0.261799
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 128, 128 )
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+collision_layer = 68
+collision_mask = 9
+format = 1
+tile_data = PoolIntArray( 1114135, 0, 262148, 1114136, 0, 196609, 1114137, 0, 196609, 1114138, 0, 196610, 1179667, 0, 196608, 1179668, 0, 196609, 1179669, 0, 196609, 1179670, 0, 196609, 1179671, 0, 393222 )
+
+[node name="GrassTileMapLeftSlope" type="TileMap" parent="Tiles" index="2"]
+position = Vector2( 24.8, -59.9 )
+rotation = 0.261799
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 128, 128 )
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+collision_layer = 68
+collision_mask = 9
+format = 1
+tile_data = PoolIntArray( -65513, 0, 196608, -65512, 0, 196609, -65511, 0, 196609, -65510, 0, 196609, -65509, 0, 196609, -65508, 0, 196610 )
+
+[node name="BricksTileMap" type="TileMap" parent="Tiles" index="3"]
+tile_set = SubResource( 14 )
+cell_size = Vector2( 128, 128 )
+collision_layer = 4
+collision_mask = 27
+format = 1
+
+[node name="DisappearingTiles" type="Node2D" parent="Tiles" index="4"]
+modulate = Color( 0.384314, 0.403922, 0.568627, 1 )
+
+[node name="DisappearingGrassTiles" parent="Tiles/DisappearingTiles" index="0" instance=ExtResource( 24 )]
+position = Vector2( 11875, 1196 )
+rotation = 1.5708
+scale = Vector2( 1.1, 1 )
+
+[node name="DisappearingGrassTiles2" parent="Tiles/DisappearingTiles" index="1" instance=ExtResource( 24 )]
+position = Vector2( 22368, 428 )
+rotation = 1.5708
+scale = Vector2( 1.1, 1 )
+
+[node name="DisappearingGrassTiles3" parent="Tiles/DisappearingTiles" index="2" instance=ExtResource( 24 )]
+position = Vector2( 23404, 1843 )
+rotation = 1.5708
+scale = Vector2( 1.1, 1 )
+
+[node name="HazardTilemaps" type="Area2D" parent="Tiles" index="5"]
+collision_layer = 4
+collision_mask = 9
+input_pickable = false
+script = ExtResource( 6 )
+
+[node name="RevSpikesMap" parent="Tiles/HazardTilemaps" index="0" instance=ExtResource( 19 )]
+rotation = 3.14159
+tile_data = PoolIntArray(  )
+
+[node name="SpikesMap" parent="Tiles/HazardTilemaps" index="1" instance=ExtResource( 19 )]
+tile_data = PoolIntArray(  )
+
+[node name="LavaMap" parent="Tiles/HazardTilemaps" index="2" instance=ExtResource( 29 )]
+tile_data = PoolIntArray(  )
+
+[node name="Lava2Map" type="TileMap" parent="Tiles/HazardTilemaps" index="3"]
+position = Vector2( -1, 0 )
+scale = Vector2( 2, 2 )
+tile_set = SubResource( 1 )
+collision_use_parent = true
+collision_layer = 4
+collision_mask = 9
+format = 1
+tile_data = PoolIntArray( 983248, 0, 0, 983249, 0, 1, 983250, 0, 1, 983251, 0, 1, 983252, 0, 1, 983253, 0, 1, 983254, 0, 1, 983255, 0, 1, 983256, 0, 1, 983257, 0, 1, 983258, 0, 1, 983259, 0, 1, 983260, 0, 1, 983261, 0, 1, 983262, 0, 1, 983263, 0, 1, 983264, 0, 1, 983265, 0, 1, 983266, 0, 1, 983267, 0, 1, 983268, 0, 2, 1048784, 0, 65536, 1048785, 0, 65537, 1048786, 0, 65537, 1048787, 0, 65537, 1048788, 0, 65537, 1048789, 0, 65537, 1048790, 0, 65537, 1048791, 0, 65537, 1048792, 0, 65537, 1048793, 0, 65537, 1048794, 0, 65537, 1048795, 0, 65537, 1048796, 0, 65537, 1048797, 0, 65537, 1048798, 0, 65537, 1048799, 0, 65537, 1048800, 0, 65537, 1048801, 0, 65537, 1048802, 0, 65537, 1048803, 0, 65537, 1048804, 0, 65538, 1114320, 0, 131072, 1114321, 0, 131073, 1114322, 0, 131073, 1114323, 0, 131073, 1114324, 0, 131073, 1114325, 0, 131073, 1114326, 0, 131073, 1114327, 0, 131073, 1114328, 0, 131073, 1114329, 0, 131073, 1114330, 0, 131073, 1114331, 0, 131073, 1114332, 0, 131073, 1114333, 0, 131073, 1114334, 0, 131073, 1114335, 0, 131073, 1114336, 0, 131073, 1114337, 0, 131073, 1114338, 0, 131073, 1114339, 0, 131073, 1114340, 0, 131074 )
+
+[node name="LavaMap2" parent="Tiles/HazardTilemaps" index="4" instance=ExtResource( 29 )]
+tile_data = PoolIntArray(  )
+
+[node name="BreakableBricks" type="Node2D" parent="Tiles" index="6"]
+
+[node name="Collectibles" type="Node2D" parent="." index="5"]
+
+[node name="Coin" parent="Collectibles" index="0" instance=ExtResource( 10 )]
+position = Vector2( 30288, 1783 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin2" parent="Collectibles" index="1" instance=ExtResource( 10 )]
+position = Vector2( 30764, 1768 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin3" parent="Collectibles" index="2" instance=ExtResource( 10 )]
+position = Vector2( 30061, 1783 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin4" parent="Collectibles" index="3" instance=ExtResource( 10 )]
+position = Vector2( 30726, 1587 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin5" parent="Collectibles" index="4" instance=ExtResource( 10 )]
+position = Vector2( 30507, 1587 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin6" parent="Collectibles" index="5" instance=ExtResource( 10 )]
+position = Vector2( 30280, 1602 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin7" parent="Collectibles" index="6" instance=ExtResource( 10 )]
+position = Vector2( 30016, 1602 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin8" parent="Collectibles" index="7" instance=ExtResource( 10 )]
+position = Vector2( 30545, 1776 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin9" parent="Collectibles" index="8" instance=ExtResource( 10 )]
+position = Vector2( 30115, 1406 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin10" parent="Collectibles" index="9" instance=ExtResource( 10 )]
+position = Vector2( 30356, 1391 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin11" parent="Collectibles" index="10" instance=ExtResource( 10 )]
+position = Vector2( 30605, 1376 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin12" parent="Collectibles" index="11" instance=ExtResource( 10 )]
+position = Vector2( 30794, 1376 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin13" parent="Collectibles" index="12" instance=ExtResource( 10 )]
+position = Vector2( 31028, 1595 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin14" parent="Collectibles" index="13" instance=ExtResource( 10 )]
+position = Vector2( 31262, 1572 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin15" parent="Collectibles" index="14" instance=ExtResource( 10 )]
+position = Vector2( 31080, 1783 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Coin16" parent="Collectibles" index="15" instance=ExtResource( 10 )]
+position = Vector2( 31315, 1784 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="WaterMelon" parent="Collectibles" index="16" instance=ExtResource( 11 )]
+position = Vector2( 32438, 1848 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="FinishLine" parent="Collectibles" index="17" instance=ExtResource( 30 )]
+position = Vector2( 28072, 2042 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -30
+
+[node name="NPCs" type="Node2D" parent="." index="6"]
+position = Vector2( -1, 0 )
+scale = Vector2( 2, 2 )
+
+[node name="RoundSaw" parent="NPCs" index="0" instance=ExtResource( 27 )]
+position = Vector2( 6635.5, 972 )
+
+[node name="RoundSaw2" parent="NPCs" index="1" instance=ExtResource( 27 )]
+position = Vector2( 7069.5, 966.5 )
+
+[node name="RoundSaw3" parent="NPCs" index="2" instance=ExtResource( 27 )]
+position = Vector2( 7488.5, 962.5 )
+
+[node name="RoundSaw4" parent="NPCs" index="3" instance=ExtResource( 27 )]
+position = Vector2( 7926.5, 962.5 )
+
+[node name="RoundSaw5" parent="NPCs" index="4" instance=ExtResource( 27 )]
+position = Vector2( 8570.5, 582 )
+
+[node name="RoundSaw6" parent="NPCs" index="5" instance=ExtResource( 27 )]
+position = Vector2( 8591, 1001 )
+
+[node name="RoundSaw7" parent="NPCs" index="6" instance=ExtResource( 27 )]
+position = Vector2( 9365, 717 )
+
+[node name="RoundSaw8" parent="NPCs" index="7" instance=ExtResource( 27 )]
+position = Vector2( 9993, 739.5 )
+
+[node name="RoundSaw9" parent="NPCs" index="8" instance=ExtResource( 27 )]
+position = Vector2( 11440, 964 )
+
+[node name="RoundSaw10" parent="NPCs" index="9" instance=ExtResource( 27 )]
+position = Vector2( 12038, 964 )
+
+[node name="RoundSaw11" parent="NPCs" index="10" instance=ExtResource( 27 )]
+position = Vector2( 12484, 1001.5 )
+
+[node name="RoundSaw12" parent="NPCs" index="11" instance=ExtResource( 27 )]
+position = Vector2( 12470.5, 657.5 )
+
+[node name="GiantCrab" parent="NPCs" index="12" instance=ExtResource( 5 )]
+position = Vector2( 13000, 436 )
+scale = Vector2( 2.6, 2.6 )
+speed = 200
+
+[node name="LoSpalmer" parent="." index="7" instance=ExtResource( 20 )]
+position = Vector2( 29803, 1838 )
+walking_speed = 400
+running_speed = 900
+gravity = 7000
+jump_speed = 2200
+max_vertical_speed = 1500
+dash_speed = Vector2( 3000, 2500 )
+force_hurt_jump_speed = 1000
+
+[node name="GUI" type="Node2D" parent="." index="8"]
+
+[node name="GUI" parent="GUI" index="0" instance=ExtResource( 3 )]
+
+[node name="Obstacles" type="Node2D" parent="." index="9"]
+position = Vector2( 1, 0 )
+
+[node name="TheVoid" parent="Obstacles" index="0" instance=ExtResource( 12 )]
+position = Vector2( -3036, 2337 )
+scale = Vector2( 300, 1 )
+
+[node name="DashPowerUps" type="Node2D" parent="." index="10"]
+
+[node name="DashPowerUp" parent="DashPowerUps" index="0" instance=ExtResource( 28 )]
+position = Vector2( 21904, 555 )
+
+[node name="DeathTimer" type="Timer" parent="." index="11"]
+wait_time = 2.0
+one_shot = true
+
+[node name="LevelSoundEffects" type="Node" parent="." index="12" groups=["LevelSoundsEffects"]]
+script = ExtResource( 7 )
+
+[node name="MainTune" type="AudioStreamPlayer" parent="LevelSoundEffects" index="0"]
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="LevelSoundEffects" index="1"]
+stream = SubResource( 28 )
+
+[connection signal="body_entered" from="Tiles/HazardTilemaps" to="Tiles/HazardTilemaps" method="_on_SpikesArea_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

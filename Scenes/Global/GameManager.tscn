@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Global/GameManager.gd" type="Script" id=1]
+
+[node name="GameManager" type="Node" groups=["persist"]]
+script = ExtResource( 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3-c6c165429b84183ce378f43f70e93a8d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Tracks/2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3"
+dest_files=[ "res://.import/2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3-c6c165429b84183ce378f43f70e93a8d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

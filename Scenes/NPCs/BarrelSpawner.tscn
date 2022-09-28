@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Levels/BarrelSpawner.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/NPCs/Barrel.tscn" type="PackedScene" id=2]
+
+[node name="BarrelSpawner" type="Node2D"]
+position = Vector2( 869.5, -2151 )
+script = ExtResource( 1 )
+barrel_scene = ExtResource( 2 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

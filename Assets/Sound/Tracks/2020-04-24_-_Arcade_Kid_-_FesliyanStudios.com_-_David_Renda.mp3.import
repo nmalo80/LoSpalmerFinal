@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/2020-04-24_-_Arcade_Kid_-_FesliyanStudios.com_-_David_Renda.mp3-fc1cd7527fc5f422af32fa0e38bb0d6a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Tracks/2020-04-24_-_Arcade_Kid_-_FesliyanStudios.com_-_David_Renda.mp3"
+dest_files=[ "res://.import/2020-04-24_-_Arcade_Kid_-_FesliyanStudios.com_-_David_Renda.mp3-fc1cd7527fc5f422af32fa0e38bb0d6a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

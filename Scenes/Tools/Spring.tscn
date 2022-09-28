@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Items/spring/spring_in.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Items/spring/spring.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Tools/Spring.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Items/spring/spring_out.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 72.5, 35.5 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "boost",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "boost"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "boost", "boost", "idle" ]
+}
+
+[node name="Spring" type="Area2D"]
+collision_layer = 512
+script = ExtResource( 3 )
+
+[node name="AreaCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, -36.5 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -40 )
+frames = SubResource( 1 )
+animation = "boost"
+frame = 3
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/boost = SubResource( 3 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_Spring_body_entered"]

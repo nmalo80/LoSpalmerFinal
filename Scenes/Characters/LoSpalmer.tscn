@@ -1,0 +1,148 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Characters/LoSpalmer.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Characters/AnimatedSpalmer.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Particles/SplatterComponent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Particles/PooParticles.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Particles/ParticleSceneBrown.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/dash_sprite.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Sound/Effects/dash.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/Characters/LoSpalmerSound.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 212.5, 265 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 250, 95 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 180, 255 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 180, 100 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "hurting"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.099038, 0.2, 0.299038, 0.4, 0.499038, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.313726 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="LoSpalmer" instance=ExtResource( 1 )]
+position = Vector2( 0, -3.8147e-06 )
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 2 )
+walking_speed = 500
+running_speed = 1000
+dash_sprite = ExtResource( 7 )
+is_dash_enabled = true
+stop_dash_speed = 100
+dash_speed = Vector2( 2000, 1000 )
+force_dash_jump_speed = 1500
+force_hurt_jump_speed = 3000
+
+[node name="DashCollision" type="Area2D" parent="." index="0"]
+visible = false
+collision_layer = 256
+collision_mask = 8
+
+[node name="DashCollisionShape" type="CollisionShape2D" parent="DashCollision" index="0"]
+position = Vector2( 2.5, -230 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="WallCollision" type="Area2D" parent="." index="1"]
+visible = false
+position = Vector2( -180, -305 )
+collision_layer = 32
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollision" index="0"]
+position = Vector2( 180, -5 )
+shape = SubResource( 3 )
+
+[node name="SplatterComponent" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 0, -235 )
+particle_scene = ExtResource( 6 )
+
+[node name="BackGroundParticles" type="Node2D" parent="." index="3"]
+position = Vector2( 5, 5.00002 )
+
+[node name="AnimatedSprite" parent="." index="4"]
+position = Vector2( 0, -250 )
+animation = "idle"
+frame = 2
+playing = true
+script = ExtResource( 3 )
+
+[node name="PlayerState" parent="." index="5"]
+energy = 90
+
+[node name="LeftSide" type="Node2D" parent="." index="6"]
+visible = false
+position = Vector2( -180, -305 )
+
+[node name="RightSide" type="Node2D" parent="." index="7"]
+visible = false
+position = Vector2( 185, -310 )
+
+[node name="StandingCollisionShape" type="CollisionShape2D" parent="." index="8"]
+visible = false
+position = Vector2( -2.50339e-05, -255 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 8 )
+
+[node name="CrouchingCollisionShape" type="CollisionShape2D" parent="." index="9"]
+visible = false
+position = Vector2( 10, -99.9999 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 2 )
+
+[node name="PooParticles" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( -10, -485 )
+scale = Vector2( 0.9, 0.5 )
+amount = 120
+
+[node name="LoSpalmerSound" type="Node" parent="." index="12"]
+script = ExtResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LoSpalmerSound" index="0"]
+stream = ExtResource( 8 )
+
+[node name="DashTimer" type="Timer" parent="Timers" index="1"]
+wait_time = 1.2
+one_shot = true
+
+[node name="StompTimer" type="Timer" parent="Timers" index="2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="DashDirectionTimer" type="Timer" parent="Timers" index="3"]
+wait_time = 0.1
+one_shot = true
+
+[node name="HurtingTimer" type="Timer" parent="Timers" index="4"]
+wait_time = 1.6
+one_shot = true
+
+[node name="HurtingAnimationPlayer" type="AnimationPlayer" parent="." index="14"]
+anims/hurting = SubResource( 9 )
+
+[connection signal="animate" from="." to="AnimatedSprite" method="_on_LoSpalmer_animate"]
+[connection signal="splatta" from="." to="SplatterComponent" method="_on_LoSpalmer_splatta"]
+[connection signal="body_entered" from="WallCollision" to="." method="_on_WallCollision_body_entered"]
+[connection signal="body_exited" from="WallCollision" to="." method="_on_WallCollision_body_exited"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="timeout" from="Timers/DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="Timers/DashDirectionTimer" to="." method="_on_DashDirectionTimer_timeout"]
+[connection signal="timeout" from="Timers/HurtingTimer" to="." method="_on_HurtingTimer_timeout"]

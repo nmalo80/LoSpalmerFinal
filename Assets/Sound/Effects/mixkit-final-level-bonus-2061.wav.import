@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-final-level-bonus-2061.wav-6595292013ad040ee4e257dd1a71c391.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Effects/mixkit-final-level-bonus-2061.wav"
+dest_files=[ "res://.import/mixkit-final-level-bonus-2061.wav-6595292013ad040ee4e257dd1a71c391.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

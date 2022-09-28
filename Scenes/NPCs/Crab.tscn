@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/NPCs/crab/crab2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NPCs/crab/crab1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/NPCs/Crab.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Particles/SplatterComponent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Particles/ParticleSceneRed.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 145.5, 128.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 162, 130 )
+
+[node name="Crab" type="KinematicBody2D" groups=["NPC"]]
+collision_layer = 8
+collision_mask = 150
+script = ExtResource( 3 )
+
+[node name="SplatterComponent" parent="." instance=ExtResource( 4 )]
+particle_scene = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+playing = true
+
+[node name="KinematicCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 9 )
+shape = SubResource( 3 )
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 281
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2( -6.5, 9.5 )
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
+[connection signal="splatta" from="." to="SplatterComponent" method="_on_Crab_splatta"]
+[connection signal="area_entered" from="CollisionArea" to="." method="_on_CollisionArea_area_entered"]
+[connection signal="body_entered" from="CollisionArea" to="." method="_on_CollisionArea_body_entered"]

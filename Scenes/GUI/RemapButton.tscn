@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/GuiFont/HackbotFont_sub_header_white.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/GUI/RemapButton.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[node name="RemapButton" type="Button"]
+margin_left = 220.0
+margin_right = 654.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 90, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 1 )
+toggle_mode = true
+text = "Click to choose"
+flat = true
+script = ExtResource( 2 )
+
+[connection signal="button_up" from="." to="." method="_on_RemapButton_button_up"]

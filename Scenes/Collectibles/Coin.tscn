@@ -1,0 +1,116 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Scenes/Collectibles/Coin.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Items/poo coin/frame_03_delay-0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Items/poo coin/frame_21_delay-0.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Items/poo coin/frame_20_delay-0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Items/poo coin/frame_17_delay-0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Items/poo coin/frame_02_delay-0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Items/poo coin/frame_23_delay-0.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Items/poo coin/frame_16_delay-0.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Items/poo coin/frame_00_delay-0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Items/poo coin/frame_12_delay-0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Items/poo coin/frame_11_delay-0.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Items/poo coin/frame_01_delay-0.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Items/poo coin/frame_08_delay-0.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Items/poo coin/frame_05_delay-0.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Items/poo coin/frame_06_delay-0.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Items/poo coin/frame_04_delay-0.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Items/poo coin/frame_07_delay-0.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Items/poo coin/frame_13_delay-0.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Items/poo coin/frame_09_delay-0.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Items/poo coin/frame_10_delay-0.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Items/poo coin/frame_19_delay-0.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Items/poo coin/frame_14_delay-0.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Items/poo coin/frame_15_delay-0.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Items/poo coin/frame_22_delay-0.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Items/poo coin/frame_18_delay-0.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Collectibles/CoinSound.gd" type="Script" id=26]
+
+[sub_resource type="Animation" id=3]
+resource_name = "collected"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.1, 1.5 ), Vector2( 2, 2 ), Vector2( 0.1, 1.272 ), Vector2( 0.527, 0.527 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+length = 0.6
+loop = true
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 24 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 195.9
+
+[node name="Coin" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "collected"
+anims/collected = SubResource( 3 )
+anims/default = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, -3 )
+frames = SubResource( 4 )
+frame = 4
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="CoinSound" type="Node" parent="."]
+script = ExtResource( 26 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CoinSound"]
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
