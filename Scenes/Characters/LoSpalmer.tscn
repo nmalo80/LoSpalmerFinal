@@ -81,7 +81,6 @@ position = Vector2( 5, 5.00002 )
 [node name="AnimatedSprite" parent="." index="4"]
 position = Vector2( 0, -250 )
 animation = "idle"
-frame = 2
 playing = true
 script = ExtResource( 3 )
 

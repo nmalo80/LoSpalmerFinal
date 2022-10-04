@@ -3,8 +3,10 @@ extends Node2D
 export var world_number = 1
 
 func _ready():
+	var all_completed = true
+	
 	var index = world_number - 1
-		
+	
 	if GameManager.world_maps == null or GameManager.world_maps.size() == 0:
 		return
 		
@@ -12,26 +14,41 @@ func _ready():
 		var map_level = get_node("MapLevel_0")
 		map_level.allow_direction_right = true
 		map_level.modulate = Color(.36, .87 , 0)
+	else:
+		all_completed = false
 		
 	if GameManager.world_maps[index].levels[1].completed:
 		var map_level = get_node("MapLevel_1")
 		map_level.allow_direction_right = true
 		map_level.modulate = Color(.36, .87 , 0)
-	
+	else:
+		all_completed = false
+		
 	if GameManager.world_maps[index].levels[2].completed:
 		var map_level = get_node("MapLevel_2")
 		map_level.allow_direction_down = true
 		map_level.modulate = Color(.36, .87 , 0)
-	
+	else:
+		all_completed = false
+		
 	if GameManager.world_maps[index].levels[3].completed:
 		var map_level = get_node("MapLevel_3")
 		map_level.allow_direction_left = true
 		map_level.modulate = Color(.36, .87 , 0)
-	
+	else:
+		all_completed = false
+		
 	if GameManager.world_maps[index].levels[4].completed:
 		var map_level = get_node("MapLevel_4")
 		map_level.allow_direction_left = true
 		map_level.modulate = Color(.36, .87 , 0)	
+	else:
+		all_completed = false
+		
+	if all_completed:
+		print("all completed")
+		# if all coins + watermelons => You're a super player
+		# else: try to really complete the game
 		
 func update_ui(level_number):
 	$CanvasLayer/Header.text = \

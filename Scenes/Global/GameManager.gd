@@ -142,7 +142,7 @@ func read_saved_data():
 	var save_game_file = File.new()
 	
 	if not save_game_file.file_exists(save_file_path):
-		# ToDo: add error message
+		#if the save file doesn't exist, just return. The user will need to start a new game
 		return
 	
 	# We need to revert the game state so we're not cloning objects during loading. 
@@ -157,7 +157,7 @@ func read_saved_data():
 		var world_map_json = parse_json(save_game_file.get_line())
 		var world_map = WorldMap.new()
 		
-		#todo manage this 0 with a for loop
+		#note: manage this 0 with a for loop if I want to add worlds
 		world_map.completed = world_map_json["world_maps_0"]["completed"] 
 		world_map.numbers_of_levels = world_map_json["world_maps_0"]["numbers_of_levels"]
 		
@@ -295,7 +295,6 @@ func load_input_values(defaults: bool = false):
 	if not save_input_config_file.file_exists(save_input_path):
 		save_input_path = save_input_config_path_defaults
 		if not save_input_config_file.file_exists(save_input_path):
-			# ToDo: Load default values anyway
 			return
 	
 	save_input_config_file.open(save_input_path, File.READ)
@@ -345,7 +344,6 @@ func clean_all_dicts():
 	
 func clean_dict(dict):
 	if dict == null:
-		#ToDo: manage error
 		return
 		
 	for key in dict:
