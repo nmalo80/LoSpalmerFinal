@@ -2,6 +2,8 @@ extends Node2D
 
 export var world_number = 1
 
+var game_finished_scene = preload("res://Scenes/GUI/GameFinishedMenu.tscn")
+
 func _ready():
 	var all_completed = true
 	
@@ -44,11 +46,18 @@ func _ready():
 		map_level.modulate = Color(.36, .87 , 0)	
 	else:
 		all_completed = false
+	
+	if GameManager.world_maps[index].levels[5].completed:
+		var map_level = get_node("MapLevel_5")
+		#map_level.allow_direction_left = true
+		map_level.modulate = Color(.36, .87 , 0)	
+	else:
+		all_completed = false
 		
-	if all_completed:
-		print("all completed")
-		# if all coins + watermelons => You're a super player
-		# else: try to really complete the game
+	if all_completed and GameManager.check_100_complete(world_number):
+		var game_finished_instance = game_finished_scene.instance()
+		game_finished_instance.init(true)
+		add_child(game_finished_instance)
 		
 func update_ui(level_number):
 	$CanvasLayer/Header.text = \

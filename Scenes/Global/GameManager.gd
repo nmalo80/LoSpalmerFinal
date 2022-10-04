@@ -350,7 +350,8 @@ func clean_dict(dict):
 		if dict[key] != null:
 			dict[key] = -1
 	
-	
-	
+func check_100_complete(world):
+	var result = world_maps[world-1].completed
+	return result
 	
 	

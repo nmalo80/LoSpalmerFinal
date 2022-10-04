@@ -1,5 +1,7 @@
 extends Area2D
 
+var game_finished_scene = preload("res://Scenes/GUI/GameFinishedMenu.tscn")
+
 func _ready():
 	pass
 
@@ -19,6 +21,9 @@ func _on_FinishLine_body_entered(body):
 		$EnemyTimer.start()
 			
 func _on_EffectTimer_timeout():
+	var game_finished_instance = game_finished_scene.instance()
+	game_finished_instance.init(GameManager.check_100_complete(0))
+	add_child(game_finished_instance)
 	get_tree().call_group("level", "update_game_manager_and_change_scene")
 	
 func _on_EnemyTimer_timeout():
