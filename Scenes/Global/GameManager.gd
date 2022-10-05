@@ -6,7 +6,7 @@ extends Node
 # /home/fed/.local/share/godot/app_userdata/LoSpalmerIteration4/
 var save_file_path = "user://savegame.save"
 var save_input_config_path = "user://input_config.save"
-var save_input_config_path_defaults = "user://input_config_defaults.save"
+var default_input_content = '[{"crouch":83,"dash":16777221,"jump":32,"left":65,"pause":80,"right":68,"run":16777237,"up":87},{"ui_accept":32,"ui_cancel":16777237,"ui_down":83,"ui_left":65,"ui_right":68,"ui_up":87},{"crouch":13,"dash":5,"jump":0,"left":14,"pause":11,"right":15,"run":2,"up":12},{"ui_accept":0,"ui_cancel":2,"ui_down":13,"ui_left":14,"ui_right":15,"ui_up":12}]'
 
 #------------------ World Map Class ----------------- #
 class WorldMap:
@@ -93,7 +93,7 @@ var input_joypad_game_actions_dict = {
 var input_joypad_ui_actions_dict = {
 	"ui_up":null, "ui_down":null, "ui_left":null,"ui_right":null,"ui_accept":null,"ui_cancel":null
 }
-
+		
 func _init():
 	load_input_values()
 	
@@ -230,7 +230,6 @@ func update_level_details(world_number, level_number, completed, total_number_of
 	var level = world_maps[world_number].levels[level_number]
 	level.completed = completed
 	level.total_number_of_coins = total_number_of_coins
-	
 	save_game()
 		
 func clean_data():
@@ -288,24 +287,35 @@ func save_input_values():
 	save_input_config_file.store_line(to_json(all_actions_list))
 	save_input_config_file.close()
 
+func create_input_file_with_defaults_if_not_exist():
+	# if the default input file does not exist => create it
+	var file_to_Check = File.new()
+	var does_input_exist = file_to_Check.file_exists(save_input_config_path)
+	
+	if not does_input_exist:
+		restore_default_input()
+
+func restore_default_input():
+	var default_file = File.new()
+	default_file.open(save_input_config_path, File.WRITE)
+	default_file.store_string(default_input_content)
+	default_file.close()
+
 # Loads the input values from save_input_config_path or the specified path
-func load_input_values(defaults: bool = false):
+func load_input_values():
+	create_input_file_with_defaults_if_not_exist()
+	
 	clean_all_dicts()
 	
 	# open file
 	var save_input_config_file = File.new()
 	
 	var save_input_path
-	if defaults:
-		save_input_path = save_input_config_path_defaults
-	else:
-		save_input_path = save_input_config_path		
-		
-	# check that either the file or the default input file exists
+	
+	save_input_path = save_input_config_path		
+	
 	if not save_input_config_file.file_exists(save_input_path):
-		save_input_path = save_input_config_path_defaults
-		if not save_input_config_file.file_exists(save_input_path):
-			return
+		return
 	
 	save_input_config_file.open(save_input_path, File.READ)
 	var parsed_input_list = parse_json(save_input_config_file.get_line())	

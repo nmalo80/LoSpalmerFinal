@@ -77,13 +77,13 @@ func assign_text_to_button(event):
 	
 	return true
 	
-func remap_action_to(event, action, ui_action):
+func remap_action_to(event, action, my_ui_action):
 	var return_value = false	
 	
 	if input_event_type == 'InputEventKey': 
-		return_value = GameManager.edit_keyboard_input_value(action, ui_action, event)
+		return_value = GameManager.edit_keyboard_input_value(action, my_ui_action, event)
 	elif input_event_type == 'InputEventJoypadButton':
-		return_value = GameManager.edit_joypad_input_value(action, ui_action, event)
+		return_value = GameManager.edit_joypad_input_value(action, my_ui_action, event)
 	
 	return return_value
 	
