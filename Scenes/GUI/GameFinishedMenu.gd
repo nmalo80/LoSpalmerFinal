@@ -3,7 +3,7 @@ extends CanvasLayer
 func init(is_100_percent):
 	if is_100_percent:
 		$MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Label.text = \
-			"You've collected\n  - All the coins\n  - All the Watermelons!\n\n\nYou Are a ZZZuper Player!!!\n\n"
+			"You got all coins\nand watermelons\n\nYou Are a ZZZuper Player!!!\n"
 	else:
 		$MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Label.text = \
 			"Congratulations!\nYou beat the game!"

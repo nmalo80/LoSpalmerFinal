@@ -27,3 +27,4 @@ func get_zuparicu():
 func update_game_manager():
 	GameManager.set_level_watermelon(zuparicu_collected)
 	GameManager.set_level_collected_coins(collected_coins)
+	GameManager.set_level_completed()

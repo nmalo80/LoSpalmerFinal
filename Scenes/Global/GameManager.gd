@@ -105,7 +105,7 @@ func init_game_manager(new_game):
 		
 func init_new_game():
 	var world_0 = WorldMap.new()
-	for _i in range(8):
+	for _i in range(6):
 		world_0.add_level(Level.new())
 	world_maps = []
 	world_maps.append(world_0)
@@ -138,6 +138,16 @@ func set_level_watermelon(value):
 		if not world_maps[current_world].levels[current_level].water_melon_collected:
 			world_maps[current_world].levels[current_level].water_melon_collected = value
 
+# Establishes if you have completed 100% of the game
+func set_level_completed():
+	for level in world_maps[0].levels:
+		if not level.completed or not level.water_melon_collected \
+		or level.number_of_collected_coins != level.total_number_of_coins:
+			world_maps[0].completed = false
+			return
+	
+	world_maps[0].completed = true
+	
 func read_saved_data():
 	var save_game_file = File.new()
 	
