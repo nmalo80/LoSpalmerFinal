@@ -2,7 +2,7 @@ extends Node2D
 
 export var particle_scene : PackedScene
 export var particle_number_jump = 10
-export var particle_number_death = 100
+export var particle_number_death = 40
 export var random_velocity = 500.0
 
 # signal emitted by the player when they die
@@ -23,9 +23,12 @@ func splatter(num_of_particles_to_spawn):
 	# var used to own each piece of particle as we spawn it
 	var spawned_particle : RigidBody2D
 	
-	for _i in range(num_of_particles_to_spawn):
+	for i in range(num_of_particles_to_spawn):
 		spawned_particle = particle_scene.instance()
 		spawned_particle.assign_collision_shape_position(rnd.randf_range(0, -40))
+		
+		if i % 4 != 0:
+			spawned_particle.disable_collision_shape()
 		
 		get_tree().root.call_deferred("add_child",spawned_particle)
 		
